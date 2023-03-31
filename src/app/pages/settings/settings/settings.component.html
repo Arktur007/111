@@ -1,0 +1,55 @@
+<a routerLink="/tickets/tickets-list"
+   routerLinkActive="active"
+>
+  Назад / Туры
+</a>
+
+
+<p-tabView>
+  <p-tabPanel header='Изменить пароль'>
+    <div class="d-flex flex-column col-8 m-auto registration-input-wrap">
+
+    <div>
+      <span class="mx-3">Старый пароль</span>
+      <input class="mt-3"
+             type="password"
+             pInputText
+             autocomplete="password"
+             [ngClass]="{'input-error': isTouched && !oldPassword}"
+             [(ngModel)]="oldPassword"/>
+    </div>
+    <div>
+      <span class="mx-3">Новый пароль</span>
+      <input class="mt-3"
+             type="password"
+             pInputText
+             autocomplete="password"
+             [(ngModel)]="newPassword"/>
+    </div>
+    <div>
+      <span class="mx-3">Подтвердить пароль</span>
+      <input class="mt-3"
+             type="password"
+             pInputText
+             autocomplete="password"
+             [ngClass]="{'input-error': isTouched && (!confirmPassword || newPassword!=confirmPassword)}"
+             [(ngModel)]="confirmPassword"/>
+    </div>
+
+    </div>
+
+    <button class="btn btn-primary" pButton pRipple
+            (click)="changePassword()"
+            type="button">
+      Изменить пароль
+    </button>
+
+  </p-tabPanel>
+  <p-tabPanel header='Статистика'>
+
+  </p-tabPanel>
+  <p-tabPanel header='Загрузка тура'>
+
+  </p-tabPanel>
+</p-tabView>
+<p-toast position="top-right"></p-toast>
